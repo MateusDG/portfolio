@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c09">
+  <title>Mateus Diniz — Software, dados e ideias em construção</title>
+  <meta name="description" content="Portfólio de Mateus Diniz Gottardi. Desenvolvimento full stack, engenharia de dados com BanVic e pesquisa em recomendação com ontologias fuzzy na UFOP.">
+  <meta property="og:title" content="Mateus Diniz — Portfólio">
+  <meta property="og:description" content="Software, dados e pesquisa aplicada. Conheça o BanVic, meu TCC e outros projetos.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/silkscreen-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="intro" aria-hidden="true"><div class="intro-blocks"></div><span>Construindo, bloco a bloco<span class="blink">_</span></span><button id="skip-intro" tabindex="-1">Pular intro · Esc</button></div>
+  <header class="header wrap">
+    <a class="wordmark" href="#" aria-label="Mateus Diniz, início">Mateus Diniz</a>
+    <nav id="navigation" aria-label="Navegação principal">
+      <a href="#projects">Projetos</a><a href="#about">Sobre</a><a href="#log">Log</a><a href="#contact">Contato</a>
+      <a href="https://github.com/MateusDG" target="_blank" rel="noopener noreferrer" class="nav-github">GitHub ↗<span class="sr-only"> (nova aba)</span></a>
+    </nav>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-controls="navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-main">
+        <h1 id="hero-title">Mateus Diniz<span class="cursor" aria-hidden="true">_</span></h1>
+        <p class="hero-copy">Desenvolvedor full stack.<br>Construindo com <a href="#projects" class="green-link">dados</a> e <a href="#tcc" class="coral-link">ideias</a>.</p>
+        <a class="pixel-button" href="#projects">Ver projetos <span aria-hidden="true">↓</span></a>
+        <ul class="social-links" aria-label="Minhas redes">
+          <li><a href="https://github.com/MateusDG" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/mateusdg/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+          <li><a href="mailto:mateusdinizgo@hotmail.com">E-mail ↗</a></li>
+        </ul>
+      </div>
+      <div class="ground" aria-hidden="true"></div>
+      <button class="pixel-character hero-character" id="hero-character" aria-label="Acordar o pequeno construtor"><span class="speech">Olá!</span><svg viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M3 0h10v2h3v5h-2v2h-3v3H9V9H7v3H5V9H2V7H0V2h3z"/><path fill="#26251d" d="M4 3h2v3H4zm6 0h2v3h-2z"/></svg></button>
+    </section>
+
+    <section id="projects" class="section projects" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 id="projects-title">Projetos selecionados<span class="coral">.</span></h2><span class="index">01 / Construir</span></div>
+      <div class="featured-grid">
+        <article class="featured-project" id="banvic">
+          <button class="project-art" data-project="banvic" aria-label="Conhecer o projeto BanVic"><canvas id="banvic-art" width="960" height="640" aria-hidden="true"></canvas><span class="art-label">ERP → Dados → Decisões</span><span class="art-open" aria-hidden="true">↗</span></button>
+          <div class="project-top"><h3>BanVic</h3><span class="project-status"><i></i> POC validada</span></div>
+          <p>Da ingestão à inteligência comercial. Uma plataforma de dados com infraestrutura reproduzível, qualidade e um dashboard para explorar o negócio.</p>
+          <p class="project-metric">76.206 linhas reconciliadas · 7 tabelas</p>
+          <div class="project-tags"><span>Python</span><span>Airflow</span><span>Kubernetes</span><span>PostgreSQL</span></div>
+          <div class="project-actions"><button class="text-link" data-project="banvic">Explorar projeto ↗</button><a href="https://github.com/MateusDG/data-engineer-indicium" target="_blank" rel="noopener noreferrer">Código ↗</a></div>
+        </article>
+        <article class="featured-project" id="tcc">
+          <button class="project-art" data-project="tcc" aria-label="Conhecer o TCC sobre recomendação fuzzy"><canvas id="fuzzy-art" width="960" height="640" aria-hidden="true"></canvas><span class="art-label">Ontologia + Fuzzy + Recomendação</span><span class="art-open" aria-hidden="true">↗</span></button>
+          <div class="project-top"><h3>Recomendação Fuzzy</h3><span class="project-status research"><i></i> TCC · UFOP</span></div>
+          <p>Recomendações que explicam suas escolhas. Pesquisa em ontologias e lógica fuzzy aplicada ao comércio eletrônico, com API e interface integradas.</p>
+          <p class="project-metric">11.666 produtos curados · Pesquisa em andamento</p>
+          <div class="project-tags"><span>Python</span><span>FastAPI</span><span>React</span><span>Ontologias</span></div>
+          <div class="project-actions"><button class="text-link" data-project="tcc">Explorar pesquisa ↗</button><a href="#log">Notas do projeto ↓</a></div>
+        </article>
+      </div>
+      <div class="more-projects-heading"><h3>Outros blocos que construí</h3><div class="filters" role="group" aria-label="Filtrar projetos"><button aria-pressed="true" data-filter="all">Todos</button><button aria-pressed="false" data-filter="software">Software</button><button aria-pressed="false" data-filter="data">Dados</button></div></div>
+      <div class="project-list">
+        <a class="project-row" data-category="software" href="https://www.kouzinaclub.com.br/" target="_blank" rel="noopener noreferrer"><span class="row-icon coral">▥</span><span class="row-info"><strong>Kouzina Club</strong><span>Desenvolvimento e evolução de e-commerce em produção.</span></span><span class="row-type">Experiência profissional</span><span class="row-arrow">↗</span></a>
+        <a class="project-row" data-category="software" href="https://github.com/MateusDG/PlayNexus" target="_blank" rel="noopener noreferrer"><span class="row-icon lavender">✛</span><span class="row-info"><strong>PlayNexus</strong><span>Launcher open source para organizar e iniciar jogos.</span></span><span class="row-type">Python · Open source</span><span class="row-arrow">↗</span></a>
+        <a class="project-row" data-category="data" href="https://github.com/MateusDG/saas-fuzzy" target="_blank" rel="noopener noreferrer"><span class="row-icon green">⌘</span><span class="row-info"><strong>Kouzina Reco</strong><span>MVP de recomendação com API, widget e catálogo integrado.</span></span><span class="row-type">FastAPI · PostgreSQL</span><span class="row-arrow">↗</span></a>
+        <a class="project-row" data-category="data" href="https://github.com/MateusDG/web_scraping" target="_blank" rel="noopener noreferrer"><span class="row-icon gold">▤</span><span class="row-info"><strong>Validação de catálogo</strong><span>Automação para comparar dimensões e pesos entre site e planilhas.</span></span><span class="row-type">Python · Web scraping</span><span class="row-arrow">↗</span></a>
+        <a class="project-row" data-category="data" href="https://github.com/MateusDG/Grafos-Caminho-Mais-Curto" target="_blank" rel="noopener noreferrer"><span class="row-icon blue">⌁</span><span class="row-info"><strong>Grafos e caminhos</strong><span>Trabalho acadêmico de algoritmos e estruturas de dados.</span></span><span class="row-type">Python · Algoritmos</span><span class="row-arrow">↗</span></a>
+      </div>
+      <a class="all-projects text-link" href="https://github.com/MateusDG?tab=repositories" target="_blank" rel="noopener noreferrer">Todos os repositórios no GitHub ↗</a>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="section-heading"><h2 id="about-title">Sobre mim<span class="green">.</span></h2><span class="index">02 / Jogador 1</span></div>
+      <div class="player-card">
+        <div class="player-visual"><svg class="pixel-portrait" viewBox="0 0 32 32" role="img" aria-label="Avatar ilustrado em pixels de um desenvolvedor"><path fill="#171e18" d="M0 0h32v32H0z"/><path fill="#243b2a" d="M3 3h3v3H3zm23 4h3v3h-3zM4 24h3v3H4zm23 1h2v2h-2z"/><path fill="#2a2822" d="M11 5h11v2h3v11h-3v5H10v-5H7V9h4z"/><path fill="#ce9f7b" d="M10 10h13v8h-2v4H12v-4h-2z"/><path fill="#e0b28b" d="M12 10h9v7h-9z"/><path fill="#2c302b" d="M9 12h6v4H9zm9 0h6v4h-6z"/><path fill="#89bca1" d="M10 13h4v2h-4zm9 0h4v2h-4z"/><path fill="#2c302b" d="M15 13h3v1h-3zm-2 6h7v1h-7z"/><path fill="#68b58c" d="M9 23h14v2h3v7H6v-7h3z"/><path fill="#397e59" d="M9 25h3v7H9zm12 0h2v7h-2z"/><path fill="#e6e7da" d="M15 25h3v2h-3z"/></svg><span class="player-label">Player 1</span><span class="player-level">Desde 2023</span></div>
+        <div class="player-content"><p class="eyebrow">Classe: Desenvolvedor / Pesquisador</p><h3>Mateus Diniz Gottardi</h3><p class="about-copy">Conecto software, dados e necessidades de negócio. Desde 2023, atuo na Kouzina com desenvolvimento e manutenção de sistemas de e-commerce, interfaces, APIs e integrações.</p><p class="about-copy">Curso Sistemas de Informação na UFOP, com conclusão prevista para dezembro de 2026. No TCC, investigo como ontologias e lógica fuzzy podem tornar recomendações mais explicáveis.</p><div class="inventory"><span class="eyebrow">Inventário</span><ul><li><span>Software</span><strong>Java · TypeScript · React</strong></li><li><span>Dados</span><strong>Python · SQL · PostgreSQL</strong></li><li><span>Infraestrutura</span><strong>Docker · Kubernetes · Terraform</strong></li><li><span>Pesquisa</span><strong>Ontologias · Fuzzy · Recomendação</strong></li></ul></div><div class="special-move"><span class="eyebrow">Habilidade especial</span><p>Transformar um problema de negócio em algo que você pode abrir, usar e entender.</p></div></div>
+      </div>
+    </section>
+
+    <section id="activity" class="section" aria-labelledby="activity-title">
+      <div class="section-heading"><h2 id="activity-title">Um ano em blocos<span class="green">.</span></h2><span class="index">03 / GitHub</span></div>
+      <p class="section-description">Cada bloco é um dia. Quanto mais verde, mais contribuições públicas.</p>
+      <div class="contribution-shell"><canvas id="contribution-canvas" width="1400" height="530" role="img" aria-label="Gráfico isométrico de contribuições públicas no GitHub"></canvas><div id="contribution-tooltip" class="chart-tooltip" hidden></div></div>
+      <div class="contribution-footer"><p><a href="https://github.com/MateusDG" target="_blank" rel="noopener noreferrer">@MateusDG ↗</a><span id="contribution-count"> · Carregando contribuições…</span></p><div class="chart-legend"><span>Menos</span><i></i><i></i><i></i><i></i><i></i><span>Mais</span></div></div>
+      <p class="data-date" id="contribution-date"></p>
+    </section>
+
+    <section id="log" class="section log" aria-labelledby="log-title">
+      <div class="section-heading"><h2 id="log-title">Log<span class="coral">.</span></h2><span class="index">04 / Notas de construção</span></div>
+      <button class="log-entry" data-project="banvic"><span class="log-date">05 out 2026<br><span>Engenharia de dados</span></span><span class="log-content"><strong>Do ERP ao dashboard: construindo o BanVic</strong><span>Sete tabelas, publicação transacional e evidências de qualidade. O que sustenta a plataforma por trás dos gráficos.</span></span><span class="log-arrow">Ler ↗</span></button>
+      <button class="log-entry" data-project="tcc"><span class="log-date">15 set 2026<br><span>Pesquisa aplicada</span></span><span class="log-content"><strong>Recomendar também é explicar</strong><span>Ontologias, lógica fuzzy e ranking híbrido. As entregas, os experimentos e os limites do meu TCC.</span></span><span class="log-arrow">Ler ↗</span></button>
+    </section>
+
+    <section id="world" class="section" aria-labelledby="world-title">
+      <div class="section-heading"><h2 id="world-title">Do Brasil para a web<span class="coral">.</span></h2><span class="index">05 / Meu ponto de partida</span></div>
+      <p class="section-description">Ideias construídas aqui. Projetos que podem chegar a qualquer lugar.</p>
+      <div class="world-layout"><button id="world-map" aria-label="Explorar meu ponto de partida no Brasil"><canvas id="world-canvas" width="1200" height="540" aria-hidden="true"></canvas></button><div class="world-info"><span class="eyebrow">Base</span><h3>Brasil<span class="green">_</span></h3><p>João Monlevade, MG</p><ul><li><span>Trabalho</span><strong>Kouzina</strong></li><li><span>Formação</span><strong>UFOP</strong></li><li><span>Construção</span><strong>Software + Dados</strong></li></ul><span class="world-caption">Um mapa de origem.<br>Um convite para conectar.</span></div></div>
+    </section>
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="section-heading"><h2 id="contact-title">Vamos conversar<span class="green">?</span></h2><span class="index">06 / Próximo bloco</span></div>
+      <ul class="social-links contact-social"><li><a href="https://github.com/MateusDG" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://www.linkedin.com/in/mateusdg/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li><li><a href="https://wa.me/5527998619377" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></li><li><a href="mailto:mateusdinizgo@hotmail.com">E-mail ↗</a></li></ul>
+      <div class="terminal"><div class="terminal-bar"><span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>guest@mateusdiniz:~</span><span class="terminal-icon" aria-hidden="true">⌘</span></div><div class="terminal-body"><div id="terminal-output" role="log" aria-live="polite" aria-relevant="additions"><p><span class="green">Olá. Este é o terminal do Mateus.</span></p><p>Uma boa conversa pode ser o começo do próximo projeto.<br>Digite <span class="terminal-command">help</span> ou use os botões abaixo.</p></div><form id="terminal-form" autocomplete="off"><label for="terminal-input"><span class="green">guest</span><span class="muted">~</span> $</label><input id="terminal-input" name="command" aria-label="Comando do terminal" placeholder="Digite um comando…" spellcheck="false" maxlength="180"><button class="terminal-submit" aria-label="Executar comando" type="submit">↵</button></form><div class="terminal-shortcuts"><button data-command="contact">Entrar em contato</button><button data-command="github">GitHub</button><button data-command="help">Help</button><button data-command="clear">Limpar</button></div></div></div>
+      <div class="contact-email"><a href="mailto:mateusdinizgo@hotmail.com">mateusdinizgo@hotmail.com ↗</a><button id="copy-email" aria-label="Copiar endereço de e-mail">Copiar</button><span id="copy-status" role="status" class="sr-only"></span></div>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>Construído bloco a bloco. © 2026 Mateus Diniz</span><a href="#" aria-label="Voltar ao topo">↑ Voltar ao topo</a></footer>
+  <button id="secrets-button" class="secrets-button" aria-label="Ver segredos descobertos">Segredos <span id="secrets-count">0</span>/3</button>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><span id="dialog-kicker"></span><button id="close-dialog" aria-label="Fechar detalhes do projeto">✕</button></div><div id="dialog-content"></div></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>
