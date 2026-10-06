@@ -13,11 +13,14 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/silkscreen-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
   <script src="app.js" defer></script>
+  <script src="motion.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
-  <div class="intro" aria-hidden="true"><div class="intro-blocks"></div><span>Construindo, bloco a bloco<span class="blink">_</span></span><button id="skip-intro" tabindex="-1">Pular intro · Esc</button></div>
+  <div class="intro" aria-hidden="true"><canvas id="intro-canvas" width="900" height="480"></canvas><span>Construindo, bloco a bloco<span class="blink">_</span></span><div class="intro-progress"><i></i></div><button id="skip-intro" tabindex="-1">Pular intro · Esc</button></div>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
   <header class="header wrap">
     <a class="wordmark" href="#" aria-label="Mateus Diniz, início">Mateus Diniz</a>
     <nav id="navigation" aria-label="Navegação principal">
@@ -38,6 +41,7 @@
           <li><a href="mailto:mateusdinizgo@hotmail.com">E-mail ↗</a></li>
         </ul>
       </div>
+      <button id="hero-world" class="hero-world" aria-label="Reconstruir o pequeno mundo de software, dados e pesquisa"><canvas id="hero-canvas" width="720" height="480" aria-hidden="true"></canvas><span class="world-overline"><i></i> Ideias em construção</span><span class="world-prompt"><span id="hero-world-label">Software</span> <span>↻ Clique para construir</span></span></button>
       <div class="ground" aria-hidden="true"></div>
       <button class="pixel-character hero-character" id="hero-character" aria-label="Acordar o pequeno construtor"><span class="speech">Olá!</span><svg viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M3 0h10v2h3v5h-2v2h-3v3H9V9H7v3H5V9H2V7H0V2h3z"/><path fill="#26251d" d="M4 3h2v3H4zm6 0h2v3h-2z"/></svg></button>
     </section>
@@ -84,7 +88,9 @@
     <section id="activity" class="section" aria-labelledby="activity-title">
       <div class="section-heading"><h2 id="activity-title">Um ano em blocos<span class="green">.</span></h2><span class="index">03 / GitHub</span></div>
       <p class="section-description">Cada bloco é um dia. Quanto mais verde, mais contribuições públicas.</p>
-      <div class="contribution-shell"><canvas id="contribution-canvas" width="1400" height="530" role="img" aria-label="Gráfico isométrico de contribuições públicas no GitHub"></canvas><div id="contribution-tooltip" class="chart-tooltip" hidden></div></div>
+      <div class="chart-controls" role="group" aria-label="Visualização das contribuições"><button data-chart-view="3d" aria-pressed="true">Blocos 3D</button><button data-chart-view="2d" aria-pressed="false">Calendário 2D</button><button id="rebuild-chart">↻ Reconstruir</button></div>
+      <div class="contribution-shell"><canvas id="contribution-canvas" width="1400" height="530" role="img" tabindex="0" aria-describedby="chart-help" aria-label="Gráfico isométrico de contribuições públicas no GitHub"></canvas><div id="contribution-tooltip" class="chart-tooltip" role="status" hidden></div></div>
+      <span id="chart-help" class="sr-only">Use as setas esquerda e direita para explorar os dias ou toque nos blocos.</span>
       <div class="contribution-footer"><p><a href="https://github.com/MateusDG" target="_blank" rel="noopener noreferrer">@MateusDG ↗</a><span id="contribution-count"> · Carregando contribuições…</span></p><div class="chart-legend"><span>Menos</span><i></i><i></i><i></i><i></i><i></i><span>Mais</span></div></div>
       <p class="data-date" id="contribution-date"></p>
     </section>
@@ -98,7 +104,7 @@
     <section id="world" class="section" aria-labelledby="world-title">
       <div class="section-heading"><h2 id="world-title">Do Brasil para a web<span class="coral">.</span></h2><span class="index">05 / Meu ponto de partida</span></div>
       <p class="section-description">Ideias construídas aqui. Projetos que podem chegar a qualquer lugar.</p>
-      <div class="world-layout"><button id="world-map" aria-label="Explorar meu ponto de partida no Brasil"><canvas id="world-canvas" width="1200" height="540" aria-hidden="true"></canvas></button><div class="world-info"><span class="eyebrow">Base</span><h3>Brasil<span class="green">_</span></h3><p>João Monlevade, MG</p><ul><li><span>Trabalho</span><strong>Kouzina</strong></li><li><span>Formação</span><strong>UFOP</strong></li><li><span>Construção</span><strong>Software + Dados</strong></li></ul><span class="world-caption">Um mapa de origem.<br>Um convite para conectar.</span></div></div>
+      <div class="world-layout"><button id="world-map" aria-label="Explorar meu ponto de partida no Brasil" aria-pressed="false"><canvas id="world-canvas" width="1200" height="540" aria-hidden="true"></canvas><span id="map-hint" class="map-hint">Ampliar o Brasil ↗</span></button><div class="world-info"><span class="eyebrow">Base</span><h3>Brasil<span class="green">_</span></h3><p>João Monlevade, MG</p><ul><li><span>Trabalho</span><strong>Kouzina</strong></li><li><span>Formação</span><strong>UFOP</strong></li><li><span>Construção</span><strong>Software + Dados</strong></li></ul><span class="world-caption">Um mapa de origem.<br>Um convite para conectar.</span></div></div>
     </section>
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <div class="section-heading"><h2 id="contact-title">Vamos conversar<span class="green">?</span></h2><span class="index">06 / Próximo bloco</span></div>
@@ -109,6 +115,7 @@
   </main>
   <footer class="footer wrap"><span>Construído bloco a bloco. © 2026 Mateus Diniz</span><a href="#" aria-label="Voltar ao topo">↑ Voltar ao topo</a></footer>
   <button id="secrets-button" class="secrets-button" aria-label="Ver segredos descobertos">Segredos <span id="secrets-count">0</span>/3</button>
+  <button id="motion-toggle" class="motion-toggle" aria-label="Animações" aria-pressed="true"><i aria-hidden="true"></i><span>Movimento on</span></button>
   <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><span id="dialog-kicker"></span><button id="close-dialog" aria-label="Fechar detalhes do projeto">✕</button></div><div id="dialog-content"></div></dialog>
   <div class="toast" id="toast" role="status" hidden></div>
 </body>
