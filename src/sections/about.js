@@ -3,7 +3,7 @@ import { motionOn } from '../lib/motion.js';
 import { blip } from '../lib/sound.js';
 
 const QUERY = [
-  ['kw', 'SELECT'], ['', ' nome, cargo, desde, formacao,\n       base, idiomas, especial\n'],
+  ['kw', 'SELECT'], ['', ' nome, cargo, desde, formacao,\n       base, idiomas, erp, especial\n'],
   ['kw', 'FROM'], ['', ' pessoas\n'],
   ['kw', 'WHERE'], ['', ' github = '], ['str', "'MateusDG'"], ['', ';'],
 ];

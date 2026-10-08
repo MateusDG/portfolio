@@ -57,9 +57,6 @@ export function initReveal(ready = Promise.resolve()) {
     once(node, after(() => countTo(node)));
   }
 
-  // Barras do quadro "agora"
-  for (const node of $$('.now')) once(node, after(() => node.classList.add('is-in')));
-
   // Parallax suave no hero
   if (animated) {
     gsap.to('.hero-inner', {

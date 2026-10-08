@@ -1,6 +1,6 @@
 import { $, el, sleep } from '../lib/dom.js';
 import { motionOn } from '../lib/motion.js';
-import { discover } from '../lib/secrets.js';
+import { discover, SECRETS } from '../lib/secrets.js';
 
 // A abertura é o próprio portfólio rodando como um DAG do Airflow.
 export function runBoot(getTotal) {
@@ -41,10 +41,10 @@ export function runBoot(getTotal) {
     const steps = [
       ['<span class="b-hl">$ airflow dags trigger mateus_portfolio</span>', 260],
       ['<span class="b-ok">✓</span> wait_for_visitor ........... <span class="b-ok">success</span>', 220],
-      ['<span class="b-ok">✓</span> load_cases ................. <span class="b-hl">banvic, tcc</span>', 220],
+      ['<span class="b-ok">✓</span> load_cases ................. <span class="b-hl">tcc, banvic</span>', 220],
       [() => `<span class="b-ok">✓</span> load_contributions ......... <span class="b-hl">${getTotal() ? `${getTotal()} linhas` : 'ok'}</span>`, 220],
       ['<span class="b-ok">✓</span> validate_fuzziness ......... <span class="b-co">μ = 0.90</span>', 220],
-      ['<span class="b-ok">✓</span> hide_secrets ............... <span class="b-hl">18 escondidos</span>', 220],
+      [`<span class="b-ok">✓</span> hide_secrets ............... <span class="b-hl">${SECRETS.length} escondidos</span>`, 220],
       ['<span class="b-ok">●</span> publish_page ............... <span class="b-ok">published</span>', 340],
     ];
     let lit = 0;

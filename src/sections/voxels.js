@@ -34,8 +34,10 @@ export function mountVoxels(data, { countUp, dateLabel, plural }) {
   const busiestIdx = days.findIndex((d) => d.d === data.busiestDay.date);
   const PITCH = 1.16;
 
-  const renderer = new WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  const dpr = devicePixelRatio || 1;
+  const coarse = matchMedia('(pointer: coarse)').matches;
+  const renderer = new WebGLRenderer({ antialias: dpr < 2, alpha: true, powerPreference: 'low-power' });
+  renderer.setPixelRatio(Math.min(dpr, coarse ? 1.5 : 2));
   stage.append(renderer.domElement);
   const scene = new Scene();
   const camera = new OrthographicCamera(-1, 1, 1, -1, -500, 500);
@@ -255,9 +257,14 @@ export function mountVoxels(data, { countUp, dateLabel, plural }) {
 
   // Loop: só roda com a seção visível.
   let running = false;
+  let lastIdle = 0;
   function frame() {
     const now = performance.now();
-    if (!interacting && motionOn() && now - idleSince > 3000) {
+    const idle = !interacting && motionOn() && now - idleSince > 3000;
+    // Balanço ocioso a ~30 fps; interação e animações seguem a 60 fps.
+    if (idle && !pick && now - lastIdle < 32) { if (running) requestAnimationFrame(frame); return; }
+    lastIdle = now;
+    if (idle) {
       sph.setFromVector3(camera.position.clone().sub(controls.target));
       const theta = HOME.theta + Math.sin(now / 1000 * 0.28) * 0.3;
       sph.theta += (theta - sph.theta) * 0.02;

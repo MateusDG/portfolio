@@ -57,16 +57,16 @@ export function initTerminal(getGithub) {
   const COMMANDS = {
     help: () => {
       print([
-        '<span class="t-dim">navegação</span>   sobre · projetos · banvic · tcc · github · agora',
+        '<span class="t-dim">navegação</span>   sobre · projetos · tcc · banvic · github',
         '<span class="t-dim">contato</span>     contato · email · linkedin · whatsapp',
         '<span class="t-dim">info</span>        stack · whoami · ls · cat · date · uptime · segredos',
         '<span class="t-dim">sistema</span>     clear · history · theme [dark|light] · echo',
         '<span class="t-dim">?</span>           alguns comandos não estão listados. 😉',
       ].join('\n'));
     },
-    sobre: () => { print('Mateus Diniz Gottardi · engenheiro de software full stack na Kouzina desde 2023 · Sistemas de Informação na UFOP (dez/2026) · TCC em recomendação com ontologias fuzzy.'); go('sobre'); },
+    sobre: () => { print('Mateus Diniz Gottardi · engenheiro de software full stack na Kouzina desde 2023 · Sistemas de Informação na UFOP (dez/2026) · TCC em recomendação com ontologias fuzzy · ERP Sankhya no dia a dia.'); go('sobre'); },
     projetos: () => {
-      print([link('BanVic', '#banvic'), document.createTextNode('  ·  '), link('TCC fuzzy', '#tcc'), document.createTextNode('  ·  '), link('outros projetos', '#mais')]);
+      print([link('TCC fuzzy', '#tcc'), document.createTextNode('  ·  '), link('BanVic', '#banvic'), document.createTextNode('  ·  '), link('outros projetos', '#mais')]);
     },
     banvic: () => { print('<span class="t-green">BanVic</span>: 7 tabelas, 76.206 linhas reconciliadas, publicação transacional. role até lá e aperte o trigger.'); go('banvic'); },
     tcc: () => { print('<span class="t-coral">TCC</span>: ontologia + Mamdani (15 regras + R00) + ranking híbrido explicável.'); go('tcc'); },
@@ -75,7 +75,6 @@ export function initTerminal(getGithub) {
       if (g) print(`<span class="t-green">${fmt(g.totals.all)}</span> contribuições no último ano: ${fmt(g.totals.public)} públicas + <span class="t-coral">${fmt(g.totals.private)} privadas</span>.`);
       links('github');
     },
-    agora: () => go('agora'),
     contato: () => { print('bora conversar sobre software, dados ou aquela ideia parada no papel.'); links('email', 'linkedin', 'whatsapp'); },
     email: () => links('email'),
     linkedin: () => links('linkedin'),
@@ -84,6 +83,7 @@ export function initTerminal(getGithub) {
       '<span class="t-violet">backend</span>   Java · Spring Boot · Spring Batch · REST',
       '<span class="t-violet">frontend</span>  Angular · React · Next.js · TypeScript',
       '<span class="t-violet">dados</span>     Python · SQL · PostgreSQL · Airflow · Meltano · Power BI',
+      '<span class="t-violet">erp</span>       Sankhya · SQL no DBExplorer · BI e dashboards',
       '<span class="t-violet">infra</span>     Docker · Kubernetes · Terraform · AWS · CI/CD',
       '<span class="t-violet">pesquisa</span>  ontologias · lógica fuzzy · recomendação',
     ].join('\n')),
@@ -143,7 +143,7 @@ export function initTerminal(getGithub) {
   };
   const ALIASES = {
     about: 'sobre', projects: 'projetos', contact: 'contato', ajuda: 'help', '?': 'help', skills: 'stack', coffee: 'cafe', 'café': 'cafe',
-    secrets: 'segredos', oi: 'hello', 'olá': 'hello', ola: 'hello', hi: 'hello', quit: 'exit', sair: 'exit', tema: 'theme', now: 'agora', limpar: 'clear',
+    secrets: 'segredos', oi: 'hello', 'olá': 'hello', ola: 'hello', hi: 'hello', quit: 'exit', sair: 'exit', tema: 'theme', limpar: 'clear',
   };
 
   function run(raw) {

@@ -20,17 +20,24 @@ export function initNav() {
 
   // Seção atual = "running"; anteriores = "success", como tarefas de um DAG.
   const sections = ids.map((id) => document.getElementById(id));
+  // Posições absolutas em cache: a rolagem só compara números, sem forçar layout.
+  let tops = [];
+  const measure = () => { tops = sections.map((s) => s.getBoundingClientRect().top + scrollY); };
+  new ResizeObserver(() => { measure(); update(); }).observe(document.body);
+  let queued = false;
   function update() {
-    const mark = innerHeight * 0.35;
+    queued = false;
+    const mark = scrollY + innerHeight * 0.35;
     let current = -1;
-    sections.forEach((s, i) => { if (s.getBoundingClientRect().top <= mark) current = i; });
+    tops.forEach((top, i) => { if (top <= mark) current = i; });
     links.forEach((a, i) => a.classList.toggle('is-active', i === current));
     steps.forEach((s, i) => {
       s.classList.toggle('is-done', i < current);
       s.classList.toggle('is-running', i === current);
     });
   }
-  addEventListener('scroll', update, { passive: true });
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+  measure();
   update();
 
   function setMenu(open) {

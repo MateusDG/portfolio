@@ -27,6 +27,7 @@ OUT = Path(__file__).resolve().parent.parent / 'public' / 'data' / 'github.json'
 PRIVATE_LABELS = {
     'MateusDG/kouzina': 'Kouzina Club · e-commerce',
     'MateusDG/recommendation_fuzzy': 'TCC · recomendação fuzzy',
+    'MateusDG/ziro': 'Ziro Code · página de vendas',
 }
 
 

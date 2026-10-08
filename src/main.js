@@ -15,7 +15,7 @@ import { initNav } from './lib/nav.js';
 import { initCursor } from './lib/cursor.js';
 import { runBoot } from './sections/intro.js';
 import { initHero } from './sections/hero.js';
-import { initBit } from './sections/bit.js';
+import { initCritters } from './sections/critters.js';
 import { initBanvic } from './sections/banvic.js';
 import { initFuzzyLab } from './sections/fuzzylab.js';
 import { initProjects, decorateProjects } from './sections/projects.js';
@@ -34,7 +34,7 @@ const githubReady = fetch(`${import.meta.env.BASE_URL}data/github.json`)
 
 renderSecrets();
 const hero = initHero();
-initBit(hero);
+initCritters(hero);
 initNav();
 initSmooth();
 initCursor();
@@ -128,7 +128,7 @@ emailButton.addEventListener('click', async () => {
 const clock = $('#hc-clock');
 const tickClock = () => {
   const time = new Date().toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' });
-  clock.textContent = `João Monlevade · ${time}`;
+  clock.textContent = `MG · ${time}`;
 };
 tickClock();
 setInterval(tickClock, 20000);

@@ -132,6 +132,11 @@ export function initHero() {
     const radius = fontSize * 0.7;
     const r2 = radius * radius;
     let energy = 0;
+    if (client.x > -9999) {
+      const rect = canvas.getBoundingClientRect();
+      pointer.x = client.x - rect.left;
+      pointer.y = client.y - rect.top;
+    }
 
     for (const p of particles) {
       const t = animated ? time : 0;
@@ -199,14 +204,15 @@ export function initHero() {
 
   range.addEventListener('input', () => setMu(Number(range.value), true));
 
+  const client = { x: -9999, y: -9999 };
   addEventListener('pointermove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    pointer.x = e.clientX - rect.left;
-    pointer.y = e.clientY - rect.top;
-    if (pointer.y > -fontSize && pointer.y < height + fontSize) wake();
+    client.x = e.clientX;
+    client.y = e.clientY;
+    if (visible) wake();
   }, { passive: true });
-  document.addEventListener('pointerleave', () => { pointer.x = pointer.y = -9999; });
-  canvas.addEventListener('touchend', () => { pointer.x = pointer.y = -9999; wake(); });
+  const release = () => { client.x = client.y = pointer.x = pointer.y = -9999; wake(); };
+  document.addEventListener('pointerleave', release);
+  canvas.addEventListener('touchend', release);
 
   title.addEventListener('click', (e) => {
     if (e.detail !== 3) return;

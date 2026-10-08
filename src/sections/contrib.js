@@ -28,14 +28,6 @@ export function initContrib(data) {
   $('#cs-peak-label').textContent = `contribuições em ${dateLabel(busiestDay.date, { day: '2-digit', month: '2-digit', year: 'numeric' })}`;
   $('#contrib-note').textContent = `${$('#contrib-note').textContent} Dados de ${dateLabel(data.range.from, { day: '2-digit', month: '2-digit', year: 'numeric' })} a ${dateLabel(data.range.to, { day: '2-digit', month: '2-digit', year: 'numeric' })}, coletados em ${dateLabel(data.generatedAt.slice(0, 10), { day: '2-digit', month: '2-digit', year: 'numeric' })}.`;
 
-  // Repositórios
-  const maxCommits = Math.max(...data.repos.map((r) => r.commits), 1);
-  const repoList = $('#repo-bars');
-  repoList.replaceChildren(...data.repos.slice(0, 8).map((r) => el('li', { class: r.private ? 'is-private' : '' }, [
-    el('span', { class: 'name', title: r.name, html: `${r.private ? '<span class="lock" aria-label="privado">🔒</span>' : ''}${r.name}` }),
-    el('span', { class: 'bar', 'aria-hidden': 'true' }, el('i', { style: `--w:${(r.commits / maxCommits) * 100}%` })),
-    el('span', { class: 'n', text: fmt(r.commits) }),
-  ])));
   // Dias da semana
   const maxDay = Math.max(...data.byWeekday, 1);
   const topDay = data.byWeekday.indexOf(maxDay);
@@ -43,7 +35,7 @@ export function initContrib(data) {
   weekdays.replaceChildren(...data.byWeekday.map((v, i) => el('div', { class: i === topDay ? 'is-top' : '', title: `${WEEKDAYS[i]}: ${v}` }, [
     el('em', { text: fmt(v) }), el('b', { style: `--h:${Math.max(3, (v / maxDay) * 100)}%` }), el('span', { text: WEEKDAYS[i] }),
   ])));
-  for (const node of [repoList, weekdays]) once(node, () => node.classList.add('is-in'));
+  once(weekdays, () => weekdays.classList.add('is-in'));
 
   $('#voxels-stage').setAttribute('aria-label', `Gráfico 3D: ${totals.all} contribuições no último ano, ${totals.public} públicas e ${totals.private} privadas, em ${totals.activeDays} dias ativos.`);
 

@@ -38,7 +38,7 @@ O "último commit" do cartão de status é calculado em relação à data atual,
 | `src/main.js` | orquestra módulos, controles flutuantes e dados |
 | `src/sections/intro.js` | boot: o portfólio como um DAG do Airflow |
 | `src/sections/hero.js` | nome em partículas amostradas da fonte Doto e controle μ |
-| `src/sections/bit.js` | o mascote Bit |
+| `src/sections/critters.js` | o terrário do hero: Bit, pato de borracha, Fuzz, bugs e o servidor-casa |
 | `src/sections/banvic.js` | simulador do DAG `banvic_ingestion` (sucesso, retry e falha permanente) |
 | `src/sections/fuzzylab.js` | inferência Mamdani didática + ranking híbrido |
 | `src/sections/contrib.js` / `voxels.js` | estatísticas e voxels 3D (Three.js, carregado sob demanda) |
@@ -51,7 +51,7 @@ O "último commit" do cartão de status é calculado em relação à data atual,
 
 ## Segredos
 
-São 18, com contador no canto inferior esquerdo e progresso salvo no navegador. Algumas dicas estão no painel de segredos; o Bit sabe outras.
+São 21, com contador no canto inferior esquerdo e progresso salvo no navegador. Algumas dicas estão no painel de segredos; os bichinhos do terrário sabem outras.
 
 ## Acessibilidade e desempenho
 
@@ -59,6 +59,9 @@ São 18, com contador no canto inferior esquerdo e progresso salvo no navegador.
 - Som opcional e desligado por padrão; todo retorno também é visual.
 - Navegação por teclado, foco visível, `<dialog>` nativo, textos alternativos e um único `h1`.
 - Canvas e WebGL só animam com a seção visível; Three.js é carregado quando a seção do GitHub se aproxima, com calendário 2D de reserva se WebGL falhar.
+- Fontes da primeira dobra pré-carregadas (plugin em `vite.config.js`), `scrollbar-gutter: stable` contra deslocamento de layout ao fim da intro e animações contínuas apenas em `transform`/`opacity`.
+- O terrário pausa todas as animações fora da tela; os bichinhos se movem com `transform` direto, sem variáveis CSS por quadro.
+- Lighthouse no build de produção com compressão: performance 96 (mobile) / 98 (desktop), acessibilidade 100, SEO 100. Boas práticas chega a 100 servido por HTTPS.
 
 ## Origem das informações
 

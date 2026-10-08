@@ -1,24 +1,30 @@
 <!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
+  <link rel="preload" href="./assets/doto-latin-full-normal-Cy2ndtyN.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="./assets/jetbrains-mono-latin-wght-normal-B9CIFXIH.woff2" as="font" type="font/woff2" crossorigin="">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0c0a">
   <title>Mateus Diniz · engenharia de software, dados e lógica fuzzy</title>
-  <meta name="description" content="Portfólio de Mateus Diniz Gottardi, engenheiro de software full stack. BanVic, uma plataforma de dados com Airflow e Kubernetes, e o TCC sobre recomendação com ontologias fuzzy na UFOP.">
+  <meta name="description" content="Portfólio de Mateus Diniz Gottardi, engenheiro de software full stack em produção desde 2023. Java, Spring Boot, Angular e React, o TCC sobre recomendação com ontologias fuzzy na UFOP e a plataforma de dados BanVic.">
   <meta property="og:title" content="Mateus Diniz · entre o 0 e o 1">
-  <meta property="og:description" content="Software em produção, pipelines de dados e recomendações que se explicam. Entre, explore e procure os segredos.">
+  <meta property="og:description" content="Engenharia de software em produção, pesquisa em recomendação explicável e dados. Entre, explore e procure os segredos.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="assets/og.png">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="data/github.json" as="fetch" crossorigin>
   <script>
     // Tema salvo antes da pintura, para evitar flash.
     try { const t = localStorage.getItem('md:theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
   </script>
-  <script type="module" crossorigin src="./assets/index-D_0n39D4.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DZsS_ZH6.css">
+  <script type="module" crossorigin src="./assets/index-fhZV9bO2.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B6-5WYb6.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -45,11 +51,10 @@
         <a href="#mais" data-nav="mais"><span>02</span>projetos</a>
         <a href="#sobre" data-nav="sobre"><span>03</span>sobre</a>
         <a href="#github" data-nav="github"><span>04</span>github</a>
-        <a href="#agora" data-nav="agora"><span>05</span>agora</a>
-        <a href="#contato" data-nav="contato"><span>06</span>contato</a>
+        <a href="#contato" data-nav="contato"><span>05</span>contato</a>
       </nav>
       <div class="dag-progress" aria-hidden="true" title="Progresso da leitura, como tarefas de um DAG">
-        <i data-step="projetos"></i><i data-step="mais"></i><i data-step="sobre"></i><i data-step="github"></i><i data-step="agora"></i><i data-step="contato"></i>
+        <i data-step="projetos"></i><i data-step="mais"></i><i data-step="sobre"></i><i data-step="github"></i><i data-step="contato"></i>
       </div>
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false"><span></span><span></span></button>
     </div>
@@ -59,15 +64,15 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-inner">
-        <p class="eyebrow hero-eyebrow"><span class="live-dot" aria-hidden="true"></span>engenheiro de software · João Monlevade, MG</p>
+        <p class="eyebrow hero-eyebrow"><span class="live-dot" aria-hidden="true"></span>engenheiro de software · MG</p>
         <h1 class="hero-title" id="hero-title">
           <span class="sr-only">Mateus Diniz</span>
           <span class="hero-fallback" aria-hidden="true">Mateus Diniz</span>
           <canvas id="hero-canvas" aria-hidden="true"></canvas>
         </h1>
         <p class="hero-lede">
-          Full stack em produção desde 2023. Construo <a href="#banvic" class="hl hl-green">pipelines de dados</a>
-          e recomendações que <a href="#tcc" class="hl hl-coral">explicam o porquê</a>.
+          Engenheiro de software full stack, em produção desde 2023. Construo <a href="#mais" class="hl hl-green">sistemas web de ponta a ponta</a>,
+          de APIs em Java e Spring a interfaces em Angular e React, e pesquiso recomendações que <a href="#tcc" class="hl hl-coral">explicam o porquê</a>.
           Acredito que quase nada é 0 ou 1.
         </p>
         <div class="mu" role="group" aria-labelledby="mu-label">
@@ -86,9 +91,9 @@
         <aside class="hero-card" aria-label="Status agora">
           <p class="hero-card-title"><span>status.json</span><span class="hc-dots" aria-hidden="true"><i></i><i></i><i></i></span></p>
           <dl>
-            <div><dt>local</dt><dd id="hc-clock">João Monlevade · --:--</dd></div>
+            <div><dt>local</dt><dd id="hc-clock">MG · --:--</dd></div>
             <div><dt>status</dt><dd><i class="live-dot" aria-hidden="true"></i>aberto a conversas</dd></div>
-            <div><dt>foco</dt><dd>TCC · Kouzina · dados</dd></div>
+            <div><dt>foco</dt><dd>software · Kouzina · TCC</dd></div>
             <div><dt>último commit</dt><dd id="hc-last">—</dd></div>
             <div><dt>μ(você ∈ colegas)</dt><dd id="hc-mu">0.90</dd></div>
           </dl>
@@ -101,9 +106,64 @@
       </div>
       <div class="wrap ground-wrap">
         <div class="ground" id="ground">
-          <button class="bit" id="bit" aria-label="Bit, o mascote. Clique para ele pular">
-            <span class="bit-say" id="bit-say" aria-live="polite"></span>
+          <!-- Casa do Bit: um servidorzinho -->
+          <div class="critter home" id="home">
+            <span class="say"></span>
+            <button class="hit" aria-label="Servidor, a casa do Bit. Clique para fazer um deploy">
+            <svg viewBox="0 0 12 19" aria-hidden="true" shape-rendering="crispEdges">
+              <path class="h-frame" d="M0 0h12v18H0z"/>
+              <path class="h-panel" d="M1 1h10v16H1z"/>
+              <path class="h-unit" d="M2 2h8v4H2zM2 7h8v4H2zM2 12h8v4H2z"/>
+              <path class="h-vent" d="M6 3h3v1H6zM6 5h3v1H6zM6 8h3v1H6zM6 10h3v1H6zM6 13h3v1H6zM6 15h3v1H6z"/>
+              <path class="led led-1" d="M3 3h1v1H3z"/><path class="led led-2" d="M4 3h1v1H4z"/>
+              <path class="led led-3" d="M3 8h1v1H3z"/><path class="led led-4" d="M4 8h1v1H4z"/>
+              <path class="led led-5" d="M3 13h1v1H3z"/><path class="led led-6" d="M4 13h1v1H4z"/>
+              <path class="h-feet" d="M1 18h2v1H1zM9 18h2v1H9z"/>
+            </svg>
+            </button>
+          </div>
+          <svg class="sprout" style="left:24%" viewBox="0 0 5 6" aria-hidden="true" shape-rendering="crispEdges"><path class="st" d="M2 2h1v4H2z"/><path class="lf" d="M0 1h2v1H0zM1 2h1v1H1zM3 0h2v1H3zM3 1h1v1H3z"/></svg>
+          <svg class="sprout" style="left:51%" viewBox="0 0 5 6" aria-hidden="true" shape-rendering="crispEdges"><path class="st" d="M2 2h1v4H2z"/><path class="lf" d="M0 1h2v1H0zM1 2h1v1H1zM3 0h2v1H3zM3 1h1v1H3z"/></svg>
+          <svg class="sprout sprout-sm" style="left:88%" viewBox="0 0 5 6" aria-hidden="true" shape-rendering="crispEdges"><path class="st" d="M2 2h1v4H2z"/><path class="lf" d="M0 1h2v1H0zM1 2h1v1H1zM3 0h2v1H3zM3 1h1v1H3z"/></svg>
+          <!-- Pato de borracha -->
+          <div class="critter duck" id="duck">
+            <span class="say"></span>
+            <button class="hit" aria-label="Pato de borracha. Clique para pedir ajuda com um bug">
+            <svg viewBox="0 0 14 10" aria-hidden="true" shape-rendering="crispEdges">
+              <path class="d-body" d="M7 0h4v1H7zM6 1h6v3H6zM7 4h4v1H7zM2 5h10v1H2zM1 6h12v3H1zM2 9h10v1H2zM12 4h2v2h-2z"/>
+              <path class="d-wing" d="M6 6h4v1H6zM7 7h4v1H7z"/>
+              <path class="d-beak" d="M3 2h3v2H3z"/>
+              <path class="d-eye" d="M8 1h1v1H8z"/>
+            </svg>
+            </button>
+          </div>
+          <!-- Fuzz, a criatura difusa (fica felpuda com μ baixo) -->
+          <div class="critter fuzz" id="fuzz">
+            <span class="say"></span>
+            <button class="hit" aria-label="Fuzz, a criatura difusa. Clique para conversar">
+            <span class="fuzz-bits" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="fuzz-body" aria-hidden="true"><i class="fuzz-eye"></i><i class="fuzz-eye"></i></span>
+            </button>
+          </div>
+          <!-- Bug: aparece de vez em quando -->
+          <div class="critter bug" id="bug" hidden>
+            <button class="hit" aria-label="Um bug! Clique para corrigir">
+            <svg viewBox="0 0 14 9" aria-hidden="true" shape-rendering="crispEdges">
+              <path class="g-shell" d="M3 1h6v1H3zM2 2h8v1H2zM1 3h10v3H1zM2 6h8v1H2z"/>
+              <path class="g-shine" d="M3 2h2v1H3z"/>
+              <path class="g-spot" d="M5 3h1v1H5zM8 4h1v1H8zM4 5h1v1H4zM7 2h1v1H7z"/>
+              <path class="g-head" d="M11 3h2v3h-2zM12 2h1v1h-1zM13 1h1v1h-1z"/>
+              <path class="g-eye" d="M12 4h1v1h-1z"/>
+              <g class="g-legs"><path class="leg-a" d="M3 7h1v2H3zM9 7h1v2H9z"/><path class="leg-b" d="M6 7h1v2H6z"/></g>
+            </svg>
+            </button>
+          </div>
+          <span class="ground-hud" id="ground-hud" hidden></span>
+          <span class="sr-only" id="ground-live" aria-live="polite"></span>
+          <div class="bit" id="bit">
+            <span class="bit-say say" id="bit-say"></span>
             <span class="bit-zzz" aria-hidden="true">z<b>z</b><i>z</i></span>
+            <button class="hit" aria-label="Bit, o mascote. Clique para ele pular">
             <svg class="bit-body" viewBox="0 0 14 14" aria-hidden="true" shape-rendering="crispEdges">
               <path class="bit-top" d="M3 0h8v1h1v1h1v1H2V2h1V1h0z"/>
               <path class="bit-face" d="M1 3h12v8H1z"/>
@@ -113,7 +173,8 @@
               <path class="bit-cheek" d="M3 8h1v1H3zM10 8h1v1h-1z"/>
               <g class="bit-legs"><path class="leg-a" d="M3 11h2v3H3z"/><path class="leg-b" d="M9 11h2v3H9z"/></g>
             </svg>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -122,9 +183,9 @@
     <section class="numbers" id="numeros" aria-label="Números">
       <div class="wrap numbers-row">
         <div class="num" data-reveal><strong data-count="3">0</strong><span>anos de software<br>em produção</span></div>
-        <div class="num" data-reveal><strong data-count="415" id="num-contrib">0</strong><span>contribuições no último<br>ano (públicas + privadas)</span></div>
-        <div class="num" data-reveal><strong data-count="76206">0</strong><span>linhas reconciliadas<br>no BanVic</span></div>
+        <div class="num" data-reveal><strong data-count="417" id="num-contrib">0</strong><span>contribuições no último<br>ano (públicas + privadas)</span></div>
         <div class="num" data-reveal><strong data-count="11666">0</strong><span>produtos curados<br>no TCC</span></div>
+        <div class="num" data-reveal><strong data-count="76206">0</strong><span>linhas reconciliadas<br>no BanVic</span></div>
       </div>
     </section>
 
@@ -134,58 +195,11 @@
         <div class="section-head">
           <span class="section-index">01 / casos em destaque</span>
           <h2 id="projetos-title" class="section-title" data-scramble>Dois projetos, dois mundos<span class="accent-coral">.</span></h2>
-          <p class="section-sub">Um é infraestrutura de dados que não pode errar. O outro é pesquisa sobre recomendar com incerteza. Os dois estão vivos aqui embaixo: aperte os botões.</p>
+          <p class="section-sub">Um é pesquisa sobre recomendar com incerteza. O outro é infraestrutura de dados que não pode errar. Os dois estão vivos aqui embaixo: aperte os botões.</p>
         </div>
 
-        <!-- BanVic -->
-        <article class="case" id="banvic" aria-labelledby="banvic-title">
-          <div class="case-info" data-reveal>
-            <div class="case-meta"><span class="chip chip-green"><i></i>POC validada · 05/10/2026</span><span class="case-kind">engenharia de dados · certificação Indicium</span></div>
-            <h3 id="banvic-title" class="case-title">BanVic</h3>
-            <p class="case-lede">Do ERP ao dashboard comercial. Ingestão das <strong>7 tabelas</strong> do banco fictício BanVic com Kubernetes local, infraestrutura como código e publicação <strong>transacional</strong>: ou entram as sete tabelas, ou nenhuma.</p>
-            <ul class="case-points">
-              <li><b>Reconciliação integral</b> — contagens, chaves, vínculos e hash de <em>todos</em> os valores antes de publicar.</li>
-              <li><b>Resiliência testada</b> — retries, rollback e snapshot anterior preservado em falha permanente.</li>
-              <li><b>Dashboard comercial</b> — atividade, retenção, agências e crédito, sem vender associação como causalidade.</li>
-            </ul>
-            <dl class="case-stats">
-              <div><dt>linhas reconciliadas</dt><dd data-count="76206">0</dd></div>
-              <div><dt>testes aprovados</dt><dd data-count="30">0</dd></div>
-              <div><dt>execução final</dt><dd>55,8<small>s</small></dd></div>
-            </dl>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>Python</li><li>Airflow</li><li>Meltano</li><li>PostgreSQL</li><li>Kubernetes · Kind</li><li>Terraform</li><li>Helm</li><li>FastAPI</li><li>ECharts</li>
-            </ul>
-            <div class="case-actions">
-              <button class="btn btn-solid" data-case="banvic" data-magnetic>ler o estudo de caso</button>
-              <a class="btn btn-line" href="https://github.com/MateusDG/data-engineer-indicium" target="_blank" rel="noopener noreferrer">código ↗<span class="sr-only"> (nova aba)</span></a>
-            </div>
-          </div>
-          <div class="case-live" data-reveal>
-            <div class="flow" aria-hidden="true">
-              <span>ERP .zip</span><span>Meltano</span><span>Airflow</span><span>PostgreSQL</span><span>FastAPI</span><span>Dashboard</span>
-              <i class="flow-packet"></i>
-            </div>
-            <div class="dag" id="dag">
-              <div class="dag-head">
-                <span class="dag-name"><span class="dag-icon" aria-hidden="true"></span>banvic_ingestion</span>
-                <span class="dag-state" id="dag-state" data-state="idle">aguardando</span>
-                <span class="dag-timer" id="dag-timer">00:00.000</span>
-              </div>
-              <div class="dag-grid" id="dag-grid" role="table" aria-label="Tarefas do DAG"></div>
-              <div class="dag-controls">
-                <button class="btn btn-solid btn-sm" data-run="ok">▶ trigger DAG</button>
-                <button class="btn btn-line btn-sm" data-run="retry" title="Simula --fail-once contas">⚡ falha transitória</button>
-                <button class="btn btn-line btn-sm btn-danger" data-run="fail" title="Simula --fail-always contas">✕ falha permanente</button>
-              </div>
-              <ol class="dag-log" id="dag-log" aria-live="polite" aria-label="Log da execução"></ol>
-            </div>
-            <p class="live-note">Simulação no navegador com as contagens e cenários reais validados no projeto. A execução final de referência levou 55,826 s.</p>
-          </div>
-        </article>
-
         <!-- TCC -->
-        <article class="case case-flip" id="tcc" aria-labelledby="tcc-title">
+        <article class="case" id="tcc" aria-labelledby="tcc-title">
           <div class="case-info" data-reveal>
             <div class="case-meta"><span class="chip chip-coral"><i></i>TCC · UFOP · em andamento</span><span class="case-kind">pesquisa aplicada · sistemas de recomendação</span></div>
             <h3 id="tcc-title" class="case-title case-title-long">Recomendação com ontologias fuzzy</h3>
@@ -245,6 +259,53 @@
             <p class="live-note">Simulação didática no navegador, inspirada no motor do TCC. O protótipo real usa Simpful, ontologia v1.1, recuperação de até 300 candidatos e peso fuzzy entre 0,35 e 0,70 conforme a confiança, como aqui.</p>
           </div>
         </article>
+
+        <!-- BanVic -->
+        <article class="case case-flip" id="banvic" aria-labelledby="banvic-title">
+          <div class="case-info" data-reveal>
+            <div class="case-meta"><span class="chip chip-green"><i></i>POC validada · 05/10/2026</span><span class="case-kind">engenharia de dados · certificação Indicium</span></div>
+            <h3 id="banvic-title" class="case-title">BanVic</h3>
+            <p class="case-lede">Do ERP ao dashboard comercial. Ingestão das <strong>7 tabelas</strong> do banco fictício BanVic com Kubernetes local, infraestrutura como código e publicação <strong>transacional</strong>: ou entram as sete tabelas, ou nenhuma.</p>
+            <ul class="case-points">
+              <li><b>Reconciliação integral</b> — contagens, chaves, vínculos e hash de <em>todos</em> os valores antes de publicar.</li>
+              <li><b>Resiliência testada</b> — retries, rollback e snapshot anterior preservado em falha permanente.</li>
+              <li><b>Dashboard comercial</b> — atividade, retenção, agências e crédito, sem vender associação como causalidade.</li>
+            </ul>
+            <dl class="case-stats">
+              <div><dt>linhas reconciliadas</dt><dd data-count="76206">0</dd></div>
+              <div><dt>testes aprovados</dt><dd data-count="30">0</dd></div>
+              <div><dt>execução final</dt><dd>55,8<small>s</small></dd></div>
+            </dl>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Python</li><li>Airflow</li><li>Meltano</li><li>PostgreSQL</li><li>Kubernetes · Kind</li><li>Terraform</li><li>Helm</li><li>FastAPI</li><li>ECharts</li>
+            </ul>
+            <div class="case-actions">
+              <button class="btn btn-solid" data-case="banvic" data-magnetic>ler o estudo de caso</button>
+              <a class="btn btn-line" href="https://github.com/MateusDG/data-engineer-indicium" target="_blank" rel="noopener noreferrer">código ↗<span class="sr-only"> (nova aba)</span></a>
+            </div>
+          </div>
+          <div class="case-live" data-reveal>
+            <div class="flow" aria-hidden="true">
+              <span>ERP .zip</span><span>Meltano</span><span>Airflow</span><span>PostgreSQL</span><span>FastAPI</span><span>Dashboard</span>
+              <i class="flow-packet"></i>
+            </div>
+            <div class="dag" id="dag">
+              <div class="dag-head">
+                <span class="dag-name"><span class="dag-icon" aria-hidden="true"></span>banvic_ingestion</span>
+                <span class="dag-state" id="dag-state" data-state="idle">aguardando</span>
+                <span class="dag-timer" id="dag-timer">00:00.000</span>
+              </div>
+              <div class="dag-grid" id="dag-grid" role="table" aria-label="Tarefas do DAG"></div>
+              <div class="dag-controls">
+                <button class="btn btn-solid btn-sm" data-run="ok">▶ trigger DAG</button>
+                <button class="btn btn-line btn-sm" data-run="retry" title="Simula --fail-once contas">⚡ falha transitória</button>
+                <button class="btn btn-line btn-sm btn-danger" data-run="fail" title="Simula --fail-always contas">✕ falha permanente</button>
+              </div>
+              <ol class="dag-log" id="dag-log" aria-live="polite" aria-label="Log da execução"></ol>
+            </div>
+            <p class="live-note">Simulação no navegador com as contagens e cenários reais validados no projeto. A execução final de referência levou 55,826 s.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -258,8 +319,8 @@
           </div>
           <div class="filters" role="group" aria-label="Filtrar projetos">
             <button aria-pressed="true" data-filter="all">todos</button>
-            <button aria-pressed="false" data-filter="produto">produto</button>
-            <button aria-pressed="false" data-filter="dados">dados & ia</button>
+            <button aria-pressed="false" data-filter="profissional">profissional</button>
+            <button aria-pressed="false" data-filter="opensource">open source</button>
             <button aria-pressed="false" data-filter="academico">acadêmico</button>
           </div>
         </div>
@@ -286,8 +347,9 @@
                 <tr><th scope="row">cargo</th><td>Engenheiro de Software / Analista de Sistemas · Kouzina</td></tr>
                 <tr><th scope="row">desde</th><td>out/2023 · 3 anos em produção</td></tr>
                 <tr><th scope="row">formação</th><td>Sistemas de Informação · UFOP · conclusão dez/2026</td></tr>
-                <tr><th scope="row">base</th><td>João Monlevade, MG · Brasil</td></tr>
+                <tr><th scope="row">base</th><td>MG · Brasil</td></tr>
                 <tr><th scope="row">idiomas</th><td>português · inglês · libras</td></tr>
+                <tr><th scope="row">erp</th><td>Sankhya · SQL, dicionário de dados, BI e dashboards</td></tr>
                 <tr><th scope="row">especial</th><td>"transformar regra de negócio em software que alguém abre e usa"</td></tr>
               </tbody>
             </table>
@@ -295,12 +357,14 @@
           </div>
           <div class="about-text" data-reveal>
             <p class="about-big">Eu gosto do espaço entre o problema de negócio e o código que roda às 3h da manhã sem ninguém olhar.</p>
-            <p>Desde 2023 trabalho na <strong>Kouzina</strong> desenvolvendo e mantendo o e-commerce em produção: interfaces em Angular e React, APIs REST e microsserviços em Java e Spring Boot, rotinas com Spring Batch, SQL Server e PostgreSQL, dashboards em Power BI e muita investigação de falha em produção.</p>
+            <p>Desde 2023 trabalho na <strong>Kouzina</strong> desenvolvendo e mantendo o e-commerce em produção: interfaces em Angular e React, APIs REST e microsserviços em Java e Spring Boot, rotinas com Spring Batch, SQL Server e PostgreSQL e muita investigação de falha em produção.</p>
+            <p>No ERP <strong>Sankhya</strong>, escrevo consultas SQL no DBExplorer, mapeio o dicionário de dados para descobrir tabelas e relacionamentos e monto componentes de BI e dashboards para as áreas de negócio, além de painéis em Power BI.</p>
             <p>Na <strong>UFOP</strong>, estudo Sistemas de Informação e pesquiso como ontologias e lógica fuzzy deixam recomendações mais explicáveis. Fora do trabalho, faço sites para clientes e projetos de dados para aprender o que ainda não sei.</p>
             <div class="stack" aria-label="Habilidades">
               <div class="stack-row"><span>backend</span><p>Java · Spring Boot · Spring Batch · REST · microsserviços</p></div>
               <div class="stack-row"><span>frontend</span><p>Angular · React · Next.js · TypeScript · Astro</p></div>
               <div class="stack-row"><span>dados</span><p>Python · SQL Server · PostgreSQL · Airflow · Meltano · Power BI</p></div>
+              <div class="stack-row"><span>erp</span><p>Sankhya · DBExplorer · dicionário de dados · BI e dashboards</p></div>
               <div class="stack-row"><span>infra</span><p>Docker · Kubernetes · Terraform · Helm · AWS · CI/CD</p></div>
               <div class="stack-row"><span>pesquisa</span><p>ontologias · lógica fuzzy · sistemas de recomendação</p></div>
             </div>
@@ -312,7 +376,7 @@
             <li data-state="scheduled"><i></i><code>2026-12</code><p><b>formatura</b> em Sistemas de Informação · UFOP</p><span class="state">agendado</span></li>
             <li data-state="success"><i></i><code>2026-10</code><p><b>BanVic</b> · POC de engenharia de dados validada (certificação Indicium)</p><span class="state">sucesso</span></li>
             <li data-state="running"><i></i><code>2026-07</code><p><b>TCC</b> · protótipo integrado: dados, ontologia, fuzzy, API e interface</p><span class="state">em execução</span></li>
-            <li data-state="running"><i></i><code>2023-10</code><p><b>Kouzina</b> · engenheiro de software / analista de sistemas</p><span class="state">em execução</span></li>
+            <li data-state="running"><i></i><code>2023-10</code><p><b>Kouzina</b> · engenheiro de software / analista de sistemas · e-commerce e ERP Sankhya</p><span class="state">em execução</span></li>
             <li data-state="success"><i></i><code>2023-09</code><p><b>primeiro commit</b> no GitHub · um site sobre lógica proposicional</p><span class="state">sucesso</span></li>
             <li data-state="success"><i></i><code>2022-11</code><p><b>init</b> · começo de Sistemas de Informação na UFOP</p><span class="state">sucesso</span></li>
           </ol>
@@ -347,10 +411,6 @@
           <div class="cstat"><strong id="cs-peak">—</strong><span id="cs-peak-label">dia mais intenso</span></div>
         </div>
         <div class="contrib-bottom">
-          <div class="repos">
-            <h3 class="mini-title">onde os commits foram parar</h3>
-            <ol class="repo-bars" id="repo-bars"></ol>
-          </div>
           <div class="weekdays">
             <h3 class="mini-title">por dia da semana</h3>
             <div class="weekday-bars" id="weekday-bars"></div>
@@ -360,41 +420,17 @@
       </div>
     </section>
 
-    <!-- ============ 05 AGORA ============ -->
-    <section class="section" id="agora" aria-labelledby="agora-title">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="section-index">05 / em execução</span>
-          <h2 id="agora-title" class="section-title" data-scramble>Agora mesmo<span class="accent-green">_</span></h2>
-        </div>
-        <div class="now" data-reveal>
-          <div class="now-head" aria-hidden="true"><span>tarefa</span><span>estado</span><span>out</span><span>nov</span><span>dez</span><span>2027</span></div>
-          <div class="now-row" data-state="running"><code>monografia_tcc</code><span class="state"><i></i>em execução</span><div class="now-bar" style="--from:0;--to:3"><span>metodologia, resultados e conclusão</span></div></div>
-          <div class="now-row" data-state="running"><code>kouzina_ecommerce</code><span class="state"><i></i>em execução</span><div class="now-bar" style="--from:0;--to:4"><span>evolução contínua do e-commerce em produção</span></div></div>
-          <div class="now-row" data-state="success"><code>banvic_certificacao</code><span class="state"><i></i>sucesso</span><div class="now-bar" style="--from:0;--to:0.3"><span>POC validada · 05/10</span></div></div>
-          <div class="now-row" data-state="scheduled"><code>formatura_ufop</code><span class="state"><i></i>agendado</span><div class="now-bar" style="--from:2.4;--to:3"><span>dez/2026</span></div></div>
-          <div class="now-row" data-state="queued"><code>proximo_desafio</code><span class="state"><i></i>na fila</span><div class="now-bar" style="--from:1;--to:4"><span>engenharia de software e dados · <a href="#contato">vamos conversar?</a></span></div></div>
-        </div>
-        <div class="notes">
-          <h3 class="mini-title">notas de construção</h3>
-          <button class="note" data-case="banvic" data-reveal><span class="note-date">05 out 2026</span><span class="note-body"><b>Do ERP ao dashboard: construindo o BanVic</b><span>Sete tabelas, publicação transacional e o que significa "reconciliar tudo".</span></span><span class="note-go" aria-hidden="true">ler →</span></button>
-          <button class="note" data-case="tcc" data-reveal><span class="note-date">15 set 2026</span><span class="note-body"><b>Recomendar também é explicar</b><span>Ontologias, lógica fuzzy, resultados negativos e o que eles ensinaram.</span></span><span class="note-go" aria-hidden="true">ler →</span></button>
-          <button class="note" data-case="site" data-reveal><span class="note-date">08 out 2026</span><span class="note-body"><b>Como este site foi feito</b><span>Voxels em Three.js, contribuições privadas reais e um mascote chamado Bit.</span></span><span class="note-go" aria-hidden="true">ler →</span></button>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ 06 CONTATO ============ -->
     <section class="section contact" id="contato" aria-labelledby="contato-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="section-index">06 / próximo commit</span>
+          <span class="section-index">05 / próximo commit</span>
           <h2 id="contato-title" class="section-title contact-title" data-scramble>Vamos construir algo<span class="accent-coral">?</span></h2>
         </div>
         <div class="contact-grid">
           <div class="contact-left" data-reveal>
-            <p class="contact-lede">Vagas, freelas, uma ideia que precisa sair do papel ou só uma conversa sobre dados e lógica fuzzy. Respondo rápido.</p>
-            <button class="email-big" id="copy-email" data-magnetic aria-label="Copiar e-mail mateusdinizgo@hotmail.com">
+            <p class="contact-lede">Vagas, freelas, uma ideia que precisa sair do papel ou só uma conversa sobre software, dados ou lógica fuzzy. Respondo rápido.</p>
+            <button class="email-big" id="copy-email" data-magnetic>
               <span class="email-text">mateusdinizgo@hotmail.com</span>
               <span class="email-copy" id="copy-label">copiar</span>
             </button>
@@ -426,7 +462,7 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <p><span class="live-dot" aria-hidden="true"></span>pipeline em execução há <span id="uptime">00:00</span> · nenhum erro</p>
-      <p>feito em João Monlevade, MG · © 2026 Mateus Diniz</p>
+      <p>feito em MG · © 2026 Mateus Diniz · <button class="footer-link" data-case="site">como este site foi feito</button></p>
       <a href="#top" class="to-top">↑ topo</a>
     </div>
   </footer>
@@ -457,6 +493,6 @@
 
   <div class="toast-zone" id="toasts" role="status" aria-live="polite"></div>
   <canvas class="rain" id="rain" aria-hidden="true"></canvas>
-
+
 </body>
 </html>

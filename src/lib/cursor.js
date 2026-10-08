@@ -19,6 +19,18 @@ export function initCursor() {
   apply(motionOn());
   onMotionChange(apply);
 
+  // <dialog> abre na camada superior do navegador, acima de qualquer z-index.
+  // Para o mesmo cursor continuar visível no modal, ele vai junto para dentro
+  // do dialog aberto e volta para o <body> quando o modal fecha.
+  const dialogs = $$('dialog');
+  const follow = () => {
+    const open = dialogs.find((d) => d.open);
+    const parent = open || document.body;
+    if (cursor.parentElement !== parent) parent.append(cursor);
+  };
+  const watcher = new MutationObserver(follow);
+  dialogs.forEach((d) => watcher.observe(d, { attributes: true, attributeFilter: ['open'] }));
+
   addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;
     dotX(e.clientX); dotY(e.clientY); ringX(e.clientX); ringY(e.clientY);

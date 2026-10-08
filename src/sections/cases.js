@@ -1,5 +1,6 @@
 import { $, $$ } from '../lib/dom.js';
 import { lenis } from '../lib/smooth.js';
+import { SECRETS } from '../lib/secrets.js';
 
 const shots = [
   ['dashboard', 'visão executiva', 'Visão executiva: clientes ativos, transações por cliente, movimentação e atividade da carteira'],
@@ -110,11 +111,12 @@ const CASES = {
           <li><strong>Three.js</strong> para os voxels de contribuição, carregado só quando a seção se aproxima.</li>
           <li><strong>GSAP</strong> e <strong>Lenis</strong> para animações e rolagem suave; tudo desliga com "movimento off" ou com a preferência do sistema.</li>
           <li>Tipografia <strong>Doto</strong> (dot-matrix) e <strong>JetBrains Mono</strong>, servidas localmente.</li>
+          <li>Um terrário em pixel art: o Bit, o pato de borracha, o Fuzz (que fica felpudo quando o μ cai), bugs para caçar e um servidor que faz deploy.</li>
         </ul>
         <h3>Contribuições públicas e privadas</h3>
         <p>O calendário público do GitHub não mostra o trabalho em repositórios privados. Um script (<code>scripts/sync-github.py</code>) usa a API autenticada: as públicas vêm do calendário oficial; as privadas são os commits do autor em todos os branches dos repositórios privados, sem duplicar SHAs. Nomes de repositórios privados só aparecem quando eu autorizo.</p>
         <h3>Os segredos</h3>
-        <p>São 18. O contador fica no canto inferior esquerdo e guarda seu progresso neste navegador. O Bit, o mascote do chão do hero, sabe algumas dicas.</p>
+        <p>São ${SECRETS.length}. O contador fica no canto inferior esquerdo e guarda seu progresso neste navegador. O Bit e os outros bichinhos do chão do hero sabem algumas dicas.</p>
         <h3>Acessibilidade</h3>
         <p>Navegação por teclado, foco visível, modais nativos, textos alternativos, respeito a <code>prefers-reduced-motion</code> e nenhum retorno que dependa só de som: os efeitos sonoros são opcionais e vêm desligados.</p>
       </article>`,
