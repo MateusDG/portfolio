@@ -1,48 +1,70 @@
-# Mateus Diniz — Portfólio
+# Mateus Diniz · entre o 0 e o 1
 
-Portfólio estático em português, com visual pixelado baseado na referência solicitada, projetos reais, detalhes do BanVic e do TCC, mapa em blocos e terminal de contato.
+Portfólio de Mateus Diniz Gottardi, refeito do zero. A ideia central vem do TCC: **quase nada é 0 ou 1**. O nome é feito de partículas com grau de pertinência (μ), o BanVic roda um DAG na frente do visitante, o TCC tem um laboratório fuzzy de verdade e as contribuições do GitHub aparecem em voxels 3D, incluindo o trabalho em repositórios privados.
 
 ## Executar
 
-Requer Node.js. Não há dependências de runtime ou instalação necessária.
+Requer Node.js 20+.
 
 ```sh
-npm run dev
+npm install
+npm run dev       # http://127.0.0.1:5173
+npm run build     # gera dist/
+npm run preview   # serve dist/ em http://127.0.0.1:4173
 ```
 
-Abra `http://127.0.0.1:4173`. Para verificar a sintaxe, execute `npm run check`.
+`dist/` é a pasta publicada (ver `.openai/hosting.json`). Qualquer hospedagem estática serve: os caminhos são relativos.
 
-## Conteúdo e manutenção
+## Atualizar as contribuições do GitHub
 
-- `dist/index.html`: apresentação, projetos, perfil e contatos.
-- `dist/styles.css`: tipografia Silkscreen, responsividade e animações.
-- `dist/app.js`: detalhes dos projetos, filtros, terminal, gráficos e interações.
-- `dist/motion.js` e `dist/motion.css`: abertura, cidades e redes animadas, parallax, construção dos gráficos e controle de movimento.
-- `dist/assets/`: fontes locais, dados públicos e captura do dashboard.
-- `.openai/hosting.json`: identidade do Site e pasta publicada.
+```sh
+npm run sync      # python scripts/sync-github.py
+npm run build
+```
 
-Todos os arquivos em `dist/` podem ser publicados em uma hospedagem estática. O portfólio não exige banco, chaves de API ou serviços de analytics.
+O script usa o GitHub CLI autenticado (`gh auth login`) ou a variável `GH_TOKEN` e grava `public/data/github.json`:
 
-O gráfico do GitHub usa um **snapshot público real**, com a data de coleta exibida na página. Para atualizá-lo, execute `python scripts/sync-public-data.py` e publique novamente. Ele não afirma atualização em tempo real. O total de contribuições é o informado pelo GitHub; as alturas representam o nível diário de atividade do calendário público.
+- **Públicas**: calendário oficial do GitHub (GraphQL `contributionCalendar`), o mesmo do perfil.
+- **Privadas**: commits do autor em todos os branches dos repositórios privados, próprios e de colaboração, deduplicados por SHA. Esses commits não entram no calendário público, então não há contagem dupla.
+- Nomes de repositórios privados só aparecem se estiverem em `PRIVATE_LABELS` no script; os demais são agregados como "Outros repositórios privados".
 
-O mapa mostra a origem profissional de Mateus. Não representa visitantes nem coleta localização. Sua geometria deriva de Natural Earth, em domínio público; `python scripts/generate-world.py` regenera os blocos.
+O "último commit" do cartão de status é calculado em relação à data atual, então fica honesto mesmo se o snapshot envelhecer.
+
+## Estrutura
+
+| caminho | o que é |
+|---|---|
+| `index.html` | todo o conteúdo e a semântica da página |
+| `src/main.js` | orquestra módulos, controles flutuantes e dados |
+| `src/sections/intro.js` | boot: o portfólio como um DAG do Airflow |
+| `src/sections/hero.js` | nome em partículas amostradas da fonte Doto e controle μ |
+| `src/sections/bit.js` | o mascote Bit |
+| `src/sections/banvic.js` | simulador do DAG `banvic_ingestion` (sucesso, retry e falha permanente) |
+| `src/sections/fuzzylab.js` | inferência Mamdani didática + ranking híbrido |
+| `src/sections/contrib.js` / `voxels.js` | estatísticas e voxels 3D (Three.js, carregado sob demanda) |
+| `src/sections/terminal.js` | terminal com comandos |
+| `src/sections/eggs.js` | easter eggs (Konami, Matrix, tela azul, tema claro…) |
+| `src/sections/cases.js` | estudos de caso em modal |
+| `src/lib/` | movimento, som, segredos, rolagem suave, revelações, navegação, cursor |
+| `src/styles/` | tokens, layout das seções e widgets |
+| `public/assets/banvic/` | capturas reais do dashboard do BanVic (WebP) |
+
+## Segredos
+
+São 18, com contador no canto inferior esquerdo e progresso salvo no navegador. Algumas dicas estão no painel de segredos; o Bit sabe outras.
+
+## Acessibilidade e desempenho
+
+- Respeita `prefers-reduced-motion`; o botão **movimento** desliga intro, partículas, Lenis e animações, e a preferência fica salva.
+- Som opcional e desligado por padrão; todo retorno também é visual.
+- Navegação por teclado, foco visível, `<dialog>` nativo, textos alternativos e um único `h1`.
+- Canvas e WebGL só animam com a seção visível; Three.js é carregado quando a seção do GitHub se aproxima, com calendário 2D de reserva se WebGL falhar.
 
 ## Origem das informações
 
-- Nome, contatos, formação e experiência: currículo e histórico profissional disponíveis no workspace.
-- BanVic: README e revisão de requisitos de 05/10/2026 do projeto `data-engineer-indicium`.
-- TCC: documentação e panorama de 15/09/2026 do projeto `recommendation_fuzzy`; estágio acadêmico informado como em andamento.
-- Repositórios e contribuições: perfil público [MateusDG](https://github.com/MateusDG).
-- Captura real do BanVic: evidência pública do dashboard comercial, otimizada em WebP.
+- Currículo, experiência e contatos: currículos em PDF do autor.
+- BanVic: README e revisão final de requisitos de 05/10/2026 do repositório `data-engineer-indicium`; capturas em `evidence/commercial/`.
+- TCC: panorama de 15/09/2026 do repositório `recommendation_fuzzy` (privado). O laboratório da página é uma simulação didática inspirada no motor do protótipo, com catálogo ilustrativo.
+- Contribuições: API do GitHub, conforme descrito acima.
 
-O protótipo acadêmico do TCC e o MVP público `saas-fuzzy` são projetos distintos; a página explicita essa relação. As ilustrações em canvas e o avatar em SVG são composições originais ilustrativas.
-
-## Interações e acessibilidade
-
-Menu móvel, filtros, modais com foco e fechamento por Escape, terminal com comandos locais, cópia do e-mail, links reais, atalhos de teclado e respeito à preferência por movimento reduzido. O terminal apresenta links para contato; nenhum comando envia mensagens automaticamente.
-
-As cenas compartilham um único loop de animação, limitado a aproximadamente 30 quadros por segundo. As cenas fora da tela, a aba em segundo plano e o conteúdo atrás de um modal não ficam animando. O botão **Movimento on/off** pausa a camada de animação e preserva a preferência neste navegador; a preferência do sistema por movimento reduzido é respeitada automaticamente.
-
-O cenário de abertura pode ser reconstruído ao clicar nele. O personagem salta ao ser acionado e aceita as setas quando recebe foco. O gráfico de contribuições alterna entre 3D e 2D, pode ser reconstruído e permite explorar datas com as setas. A animação não altera os valores históricos do GitHub.
-
-Referência visual: [Samuel Rizzon](https://www.samuelrizzon.dev/). Fontes: Silkscreen, por Jason Kottke, distribuída sob SIL Open Font License; licença em `dist/assets/OFL.txt`.
+Referência de estilo: [samuelrizzon.dev](https://www.samuelrizzon.dev/). Fontes: Doto e JetBrains Mono (SIL Open Font License), servidas localmente via Fontsource.
