@@ -13,13 +13,13 @@ npm run build     # gera dist/
 npm run preview   # serve dist/ em http://127.0.0.1:4173
 ```
 
-`dist/` é a pasta publicada (ver `.openai/hosting.json`). Qualquer hospedagem estática serve: os caminhos são relativos.
+Publicado em **https://mateusdg.github.io/portfolio/**. Cada push no `main` dispara `.github/workflows/deploy.yml`, que instala as dependências, roda `npm run build` e publica `dist/` no GitHub Pages. Qualquer outra hospedagem estática também serve: os caminhos são relativos.
 
 ## Atualizar as contribuições do GitHub
 
 ```sh
 npm run sync      # python scripts/sync-github.py
-npm run build
+git add public/data/github.json && git commit -m "chore: atualizar contribuições" && git push
 ```
 
 O script usa o GitHub CLI autenticado (`gh auth login`) ou a variável `GH_TOKEN` e grava `public/data/github.json`:
