@@ -32,22 +32,22 @@ O "último commit" do cartão de status é calculado em relação à data atual,
 
 ## Estrutura
 
-| caminho | o que é |
-|---|---|
-| `index.html` | todo o conteúdo e a semântica da página |
-| `src/main.js` | orquestra módulos, controles flutuantes e dados |
-| `src/sections/intro.js` | boot: o portfólio como um DAG do Airflow |
-| `src/sections/hero.js` | nome em partículas amostradas da fonte Doto e controle μ |
-| `src/sections/critters.js` | o terrário do hero: Bit, pato de borracha, Fuzz, bugs e o servidor-casa |
-| `src/sections/banvic.js` | simulador do DAG `banvic_ingestion` (sucesso, retry e falha permanente) |
-| `src/sections/fuzzylab.js` | inferência Mamdani didática + ranking híbrido |
-| `src/sections/contrib.js` / `voxels.js` | estatísticas e voxels 3D (Three.js, carregado sob demanda) |
-| `src/sections/terminal.js` | terminal com comandos |
-| `src/sections/eggs.js` | easter eggs (Konami, Matrix, tela azul, tema claro…) |
-| `src/sections/cases.js` | estudos de caso em modal |
-| `src/lib/` | movimento, som, segredos, rolagem suave, revelações, navegação, cursor |
-| `src/styles/` | tokens, layout das seções e widgets |
-| `public/assets/banvic/` | capturas reais do dashboard do BanVic (WebP) |
+| caminho                                     | o que é                                                                   |
+| ------------------------------------------- | -------------------------------------------------------------------------- |
+| `index.html`                              | todo o conteúdo e a semântica da página                                 |
+| `src/main.js`                             | orquestra módulos, controles flutuantes e dados                           |
+| `src/sections/intro.js`                   | boot: o portfólio como um DAG do Airflow                                  |
+| `src/sections/hero.js`                    | nome em partículas amostradas da fonte Doto e controle μ                 |
+| `src/sections/critters.js`                | o terrário do hero: Bit, pato de borracha, Fuzz, bugs e o servidor-casa   |
+| `src/sections/banvic.js`                  | simulador do DAG`banvic_ingestion` (sucesso, retry e falha permanente)   |
+| `src/sections/fuzzylab.js`                | inferência Mamdani didática + ranking híbrido                           |
+| `src/sections/contrib.js` / `voxels.js` | estatísticas e voxels 3D (Three.js, carregado sob demanda)                |
+| `src/sections/terminal.js`                | terminal com comandos                                                      |
+| `src/sections/eggs.js`                    | easter eggs (Konami, Matrix, tela azul, tema claro…)                      |
+| `src/sections/cases.js`                   | estudos de caso em modal                                                   |
+| `src/lib/`                                | movimento, som, segredos, rolagem suave, revelações, navegação, cursor |
+| `src/styles/`                             | tokens, layout das seções e widgets                                      |
+| `public/assets/banvic/`                   | capturas reais do dashboard do BanVic (WebP)                               |
 
 ## Segredos
 
@@ -70,4 +70,4 @@ São 21, com contador no canto inferior esquerdo e progresso salvo no navegador.
 - TCC: panorama de 15/09/2026 do repositório `recommendation_fuzzy` (privado). O laboratório da página é uma simulação didática inspirada no motor do protótipo, com catálogo ilustrativo.
 - Contribuições: API do GitHub, conforme descrito acima.
 
-Referência de estilo: [samuelrizzon.dev](https://www.samuelrizzon.dev/). Fontes: Doto e JetBrains Mono (SIL Open Font License), servidas localmente via Fontsource.
+Fontes: Doto e JetBrains Mono (SIL Open Font License), servidas localmente via Fontsource.
